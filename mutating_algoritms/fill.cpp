@@ -2,7 +2,7 @@
 #include <vector>
 
 template <class ForwardIt, class T>
-void fill (ForwardIt first, ForwardIt last, const T& value)
+void my_fill(ForwardIt first, ForwardIt last, const T& value)
 {
 	while (first != last) {
 	    *first = value;
@@ -21,9 +21,9 @@ int main()
     }
     std::cout << std::endl;
 
-    fill(v.begin(), v.end(), 4);
-    std::cout << "copy vector v to v1 ";
-    for (it = v1.begin(); it != v1.end(); ++it) {
+    int n = 4;
+    my_fill(v.begin(), v.end(), n);
+    for (it = v.begin(); it != v.end(); ++it) {
 	std::cout << *it << " ";
     }
     std::cout << std::endl;
