@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-//#include <algorithm>
+#include <algorithm>
 #include <numeric>
 
 template <class BidirIt1, class BidirIt2>
@@ -14,7 +14,7 @@ BidirIt2 copy_backward(BidirIt1 first, BidirIt1 last, BidirIt2 result)
 
 int main()
 {
-    //copy_backward copies el. from the range [first, last) to [result - (last - fisrt), result)
+  /*  //copy_backward copies el. from the range [first, last) to [result - (last - fisrt), result)
     std::vector<int> v(12);
     iota(v.begin(), v.end(), 1);
     v.resize(v.size() + 2);
@@ -32,6 +32,17 @@ int main()
 	std::cout << *it << " ";
     }
     std::cout << std::endl;
+*/
 
+    std::vector<int> V(15);
+    iota(V.begin(), V.end(), 1);
+    std::copy_backward(V.begin(), V.begin() + 10, V.begin() + 15);
+    std::vector<int>::iterator it;
+
+    std::cout <<"\nmy vector ";
+    for (it = V.begin(); it != V.end(); ++it) {
+	std::cout << *it << " ";
+    }
+    std::cout << std::endl;
     return 0;
 }
