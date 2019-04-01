@@ -35,12 +35,21 @@ int main()
 */
 
     std::vector<int> V(15);
+    std::vector<int> V1(14);
     iota(V.begin(), V.end(), 1);
-    std::copy_backward(V.begin(), V.begin() + 10, V.begin() + 15);
+    std::fill(V1.begin(),V1.end(),0);
+
+    std::copy_backward(V.begin(), V.begin() + 10, V1.begin() + 10);
     std::vector<int>::iterator it;
 
     std::cout <<"\nmy vector ";
     for (it = V.begin(); it != V.end(); ++it) {
+	std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+    
+    std::cout <<"\nmy V1 vector ";
+    for (it = V1.begin(); it != V1.end(); ++it) {
 	std::cout << *it << " ";
     }
     std::cout << std::endl;

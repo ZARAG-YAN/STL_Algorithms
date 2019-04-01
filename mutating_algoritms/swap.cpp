@@ -1,7 +1,8 @@
 #include <iostream>
 #include <numeric>
+#include <algorithm>
 #include <vector>
-template <class Assignable>
+/*template <class Assignable>
 
 void swap(Assignable& a, Assignable& b)
 {
@@ -9,10 +10,10 @@ void swap(Assignable& a, Assignable& b)
     a = b;
     b = c;
 }
-
+*/
 int main()
 {
-    std::vector<int> v(10);
+    std::vector<int> v(8);
     std::vector<int>::iterator it;
     iota(v.begin(), v.end(), 1);
     std::cout <<"My v vector ";
@@ -30,8 +31,8 @@ int main()
     }
 
     std::cout <<"\n\nswapping v and v1 \n";
-    swap(v, v1);
-   
+    std::swap_ranges(v.begin(), v.begin() + 3, v1.begin() + 2);
+
     std::cout <<"\nMy v vector ";
 
     for (it  = v.begin(); it != v.end(); ++it) {

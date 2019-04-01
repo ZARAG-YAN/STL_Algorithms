@@ -39,7 +39,7 @@ int main()
     }
     std::cout <<"\n\nswapping v and v1 \n";
     iter_swap(v.begin(), v1.begin() + 4);
-   
+
     std::cout <<"\nMy v vector ";
 
     for (it  = v.begin(); it != v.end(); ++it) {
